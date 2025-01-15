@@ -1,0 +1,120 @@
+<app-navbar></app-navbar>
+
+<h1 style="color: rgb(103, 10, 61);" align="center">Payment List</h1>
+
+
+<table>
+  <tr>
+      <th>Customer Name :</th>
+      <br>
+      <br>
+      <br>
+      <td><input type="text" name="customerName" placeholder="Enter First Name"
+              [(ngModel)]="form.searchParams.customerName" /></td>
+
+      <!-- <td> <select name="PaymentMode" [(ngModel)]="form.searchParam.paymentMode">
+    <option [ngValue]="" value="undefined">{{ Select Payment }}</option>
+    <option *ngFor="let obj of form.preload.paymentList" [value]="obj.key">{{obj.value}}</option>
+  </select>
+</td>  -->
+              
+
+      <td><button (click)="search()">search</button></td>
+
+      
+        <th></th>
+        <td><button (click)="delete()">delete</button></td>
+    
+
+  </tr>
+</table>
+
+<table border="1" width="100%">
+
+<tr>
+
+    <th>Select</th>
+    <th>Id</th>
+    <th>Customer Name</th>
+    <th>Payment Mode</th>
+    <th>Payment Status</th>
+    <th>LoginId</th>
+    <th>Password</th>
+    <th>Edit</th>
+
+</tr>
+
+    <tr *ngFor="let m of form.list; let i = index ">
+
+        <td style="text-align: center;">
+
+            <input type="checkbox" (change)="onCheckboxChange(m.id)"/>
+
+        </td>
+
+            <td>{{m.id}}</td>
+            <td>{{m.customerName}}</td>
+            <td>{{m.paymentMode}}</td>
+            <td>{{m.paymentStatus}}</td>
+            <td>{{m.loginId}}</td>
+            <td>{{m.password}}</td>
+            <td><a (click)="edit('/payment/'+ m.id)" style="color: blue;">edit</a>
+            </td>
+  
+
+    </tr>
+</table>
+
+<table style="width: 100%;">
+  <tr>
+    <td style="width: 50%;">
+      <button (click)="previous()" [disabled]="form.pageNo == 0">PREVIOUS
+       </button>
+    </td>
+
+
+
+    <td><button (click)="next()" [disabled]="nextlist==0" type="button">NEXT
+    </button></td>
+  </tr>
+</table>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<app-footer></app-footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

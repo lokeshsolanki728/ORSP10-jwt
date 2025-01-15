@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+
+<!-- <h2 style="color: rgb(93, 7, 43);">Update User</h2> -->
+<div>
+<h2 *ngIf="!form.id>0" class="text-primary font-weight-bold" style="text-align: center;">{{'Add Payment' |
+  translate }}</h2>
+<h2 *ngIf="form.id>0" class="text-primary font-weight-bold" style="text-align: center;">{{'Update Payment' |
+  translate }}</h2>
+</div>
+<br>
+<br>
+
+<table align="center">
+  
+    <tr>
+        <th>customerName :</th>
+        <td><input type="text" name="customerName" placeholder="Enter Customer Name" [(ngModel)]="form.customerName"/></td>
+         {{inputerror.customerName}}
+      </tr>
+
+    <tr>
+        <th>paymentMode :</th>
+        <td><input type="text" name="paymentMode" placeholder="Enter Payment Mode" [(ngModel)]="form.paymentMode"/></td>
+         {{inputerror.paymentMode}}
+      </tr>
+
+    <tr>
+        <th>paymentStatus :</th>
+        <td><input type="text" name="paymentStatus" placeholder="Enter Payment Status" [(ngModel)]="form.paymentStatus"/></td>
+         {{inputerror.paymentStatus}}
+      </tr>
+
+    <tr>
+        <th>loginId :</th>
+        <td><input type="text" name="loginId" placeholder="Enter Login Id" [(ngModel)]="form.loginId"/></td>
+         {{inputerror.loginId}}
+      </tr>
+
+    <tr>
+        <th>password :</th>
+        <td><input type="text" name="password" placeholder="Enter Password" [(ngModel)]="form.password"/></td>
+        {{inputerror.customerName}} 
+      </tr>
+</table>
+<table align="center">
+    <tr>
+      <th></th>
+      <td><button *ngIf="!form.id>0" (click)="save()">Save</button></td>
+  </tr>
+
+    <tr>
+        <th></th>
+        <td><button *ngIf="form.id>0" (click)="update()">update</button></td>
+    </tr>
+    
+</table>
+
+<app-footer></app-footer>
+
+
+  
+  
+
+
+
